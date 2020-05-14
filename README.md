@@ -6,7 +6,7 @@ API com informações do covid-19, dados referentes ao repositório https://gith
 
 Casos de todos países do mundo
 
->GET /cases/country/<country>
+>GET /cases/country/\<country>
     
 Casos por país
     
@@ -14,7 +14,7 @@ Casos por país
 
 Recuperações de todos países do mundo
     
->GET /recovered/country/<country>
+>GET /recovered/country/\<country>
     
 Recuperações por país
     
@@ -22,7 +22,7 @@ Recuperações por país
 
 Mortes de todos países do mundo
     
->GET /deaths/country/<country>
+>GET /deaths/country/\<country>
     
 Mortes por país
 
