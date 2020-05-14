@@ -1,0 +1,39 @@
+
+.snip {
+  width: 100%;
+  padding: 15px;
+  padding-bottom: 8px;
+  color: #fff;
+  border-radius: 4px;
+  background-color: #282a36;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
+  justify-content: center;
+}
+
+.snip {
+  font-size: 1.6rem;
+}
+.snip .status_code {
+  width: 50%;
+  padding: 8px;
+  border-radius: 3px;
+  background-color: #ffbb00a6;
+  margin-bottom: 15px;
+}
+.snip .message strong {
+  font-size: 1.6rem;
+  color: rgb(8, 156, 8)
+}
+
+.snip .message span{
+  color: #bdb21d
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
