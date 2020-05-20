@@ -1,0 +1,92 @@
+div {
+  box-sizing: border-box;
+  margin: 0 px;
+  padding: 0 px;
+  outline: 0 px;
+}
+
+html {
+  font-size: 62.5%;
+}
+body, html {
+  background-color: lightblue;
+  font-family: 'Roboto', sans-serif;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+}
+
+body {
+  background-color: lightblue;
+  font-size: 1.6rem;
+}
+
+header {
+  width: 90%;
+  max-width: 980px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px auto;
+
+}
+
+header .title, i {
+  text-align: center;
+  font-size: 3.2rem;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 980px;
+  margin: 32px auto
+}
+
+.container p {
+  font-size: 1.6rem;
+}
+
+.content {
+  width: 100%;
+  margin: 32px auto;
+}
+
+.content h3 {   
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 20px;
+  
+}
+
+.content h3:not(:first-child) {
+  margin-top: 32px;
+  margin-bottom: 10px;
+}
+
+.content .endpoint {
+  margin-top: 25px;
+  border: 1px solid #9b9b9b;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.endpoint .message {
+  margin-top: 8px;
+}
+
+.parametros .parametro {
+  margin-top: 32px;
+}
+
+.parametros .parametro  strong{
+  font-size: 1.8rem;
+  color: #41414d;
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
