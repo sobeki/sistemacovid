@@ -1,4 +1,5 @@
 Include/*
+*.pyc
 __pycache__/
 Lib/*
 Scripts/*
