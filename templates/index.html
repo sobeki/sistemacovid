@@ -18,13 +18,24 @@
     <main>
       <header>
         <h1 style = "text-align:center;"> Dados Atualizado </h1>
-        <a href="AQUI COLOCAR O MAPEAMENTO DA API"> <i class="nome da api"></i> </a>
+        <a href="Aqui colocar o mapeamento"> <i class="nome da api"></i> </a>
       </header>
 
       <div class="container">
+         <hr>
         <p>
-          TEXTO SOBRE A API
+                Diante da pandemia causada pelo Covid-19, uma forma de traçar
+                estratégias para combater a pandemia é monitorar os casos de corona 
+                vírus de forma que se gere dados eficientes sobre a ocorrência do vírus. 
+                A ferramenta tem por objetivo fornecer dados de forma confiável e transparente 
+                para a população e para a comunidade científica sobre a ocorrência diária da pandemia. 
+                A  API utiliza como banco de dados, casos validados de corona vírus ao redor do mundo. 
+                Com ele se pode comparar dados gerais, ou seja de todo o mundo, assim como dados específicos, 
+                de um determinado país. Os quais esses dados podem ser filtrados conforme os seguintes filtros; 
+                o número de todos os casos que ocorreram em países de todo mundo, casos exclusivamente por país, 
+                recuperação em todos os países, recuperação por país, morte em todos os países e, por fim, mortes por pais.
         </p>
+         <hr/>
 
         <div class="content">
           
@@ -33,55 +44,57 @@
           
           <hr>
            <div class="endpoint">
-            <p> GET colocar apresentação da api<a href="Api de resultados" target="_blank"> caso</a></p>
-            <p class="message">casos</p>
+            <p> GET <a href="/cases" target="_blank"> /cases</a></p>
+            <p class="message">
+              Casos de todos países do mundo
+            </p>
            </div>
           <hr/>
           <hr>
             <div class="endpoint">
-            <p>GET colocar as datas </p>
+            <p>GET  <a href="/cases/<country>" target="_blank">/cases/<country></a></p></p>
             <p class="message">
-              Retorna todos os casos de covid na data especificada.
+             Casos por país. 
             </p>
-            <p style="margin-top: 8px;"><strong></strong>:<a target="_blank" href="api">CASO DE COVITES</a></p>
+           
             </div>
           <hr/>
           
           <hr>
           <div class="endpoint">
-            <p>GET apis </p>
+            <p>GET <a href="/recovered" target="_blank">/recovered</a></p> </p>
             <p class="message">
-              Retorna todos os casos de covid no estado especificado.
+              Recuperações de todos países do mundo
             </p>
-            <p style="margin-top: 8px;"><strong></strong>: <a target="_blank" href="apis do corona virus">testo</a></p>
+      
           </div>
           <hr />
           <hr>
           <div class="endpoint">
-            <p> GET api do cora com datas e uf</p>
+            <p> GET <a href="apis" target="_blank" > /recovered/<country></a></p></p>
             <p class="message">
-              Retorna todos os casos de covid no estado e na data especificado.
+              Recuperações por país.
             </p>
-            <p style="margin-top: 8px;"><strong></strong>: <a target="_blank" href="apis"> contarios do corona virus </a></p>
+            
           </div>
           <hr />
           <hr>
           <div class="endpoint">
-            <p> GET api do cora com datas e uf</p>
+            <p> GET <a href="/deaths" target="_blank"> /deaths </a></p>
             <p class="message">
-              Retorna todos os casos de covid no estado e na data especificado.
+             Mortes de todos países do mundo.
             </p>
-            <p style="margin-top: 8px;"><strong></strong>: <a target="_blank" href="apis"> contarios do corona virus </a></p>
+            
           </div>
           <hr />
           
           <hr>
           <div class="endpoint">
-            <p> GET api do cora com datas e uf</p>
+            <p> GET <a href="/deaths/<country>" target="_blank" href="/deaths/<country>"> /deaths/<country> </a></p></p>
             <p class="message">
-              Retorna todos os casos de covid no estado e na data especificado.
+              Mortes por país
             </p>
-            <p style="margin-top: 8px;"><strong></strong>: <a target="_blank" href="apis"> contarios do corona virus </a></p>
+            
           </div>
            <hr>
           </div>
