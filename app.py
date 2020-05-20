@@ -76,8 +76,7 @@ def queryTypeChecker(_type):
             
     return obj or False
 
-def as_dict(Class):
-       return {Class.name: getattr(Class, Class.name) for c in Class.__table__.columns}
+
 
 def getQueryTotalWorld(_type):
     queryType = queryTypeChecker(_type)
