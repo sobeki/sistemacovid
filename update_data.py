@@ -2,7 +2,7 @@ import requests as req
 import json
 import datetime
 import pandas as pd
-from app import insert_query
+from app.snipets import insert_query
 from pathlib import Path
 from constants import GIT_API, GIT_FULL_DATA_FOLDER, DATA_FOLDER
 
@@ -19,7 +19,7 @@ def match_Date(date_string):
         dd = datetime.datetime.strptime(date_string,"%m/%d/%y")
     except Exception as e:
         matched = False
-        print('Date string "'+date_string+'" nao deu match')
+        print('Removendo '+date_string)
         return False
     return dd
 

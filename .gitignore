@@ -1,3 +1,4 @@
+*.md
 Include/*
 *.pyc
 __pycache__/
