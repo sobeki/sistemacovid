@@ -89,6 +89,7 @@ def getTimeSeriesObject(filesList):
             timeSeriesObj.append(file)
     return timeSeriesObj
     
-getDataFiles()
+if __name__ == "__main__":
+    getDataFiles()
 
 
