@@ -2,7 +2,7 @@ import requests as req
 import json
 import datetime
 import pandas as pd
-from app.snipets import insert_query
+from app.controller import insert_query
 from pathlib import Path
 from constants import GIT_API, GIT_FULL_DATA_FOLDER, DATA_FOLDER
 

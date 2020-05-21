@@ -1,6 +1,6 @@
 from flask import jsonify,render_template
 from app import app
-from app.snipets import *
+from app.controller import *
 
 @app.route('/cases', methods=['GET'])
 def all_cases():
@@ -37,6 +37,17 @@ def all_deaths_country(country):
     if deaths:
         return jsonify(deaths)
     return jsonify({"error":"400"})
+
+@app.route('/date/<tipo>/<country>/<data>', methods=['GET'])
+def country_by_data(tipo,country,data):
+    tipo = tipo
+    country = country
+    data = data
+    results = getQueryByDataAndPaisRoute(data, country,tipo)
+    
+    if not (data) or not (country) or not (tipo) or not (results):
+        return jsonify({"error":"400"})
+    return jsonify(results)
 
 @app.route('/', methods=['GET'])
 def home():

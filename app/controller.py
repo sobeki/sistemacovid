@@ -1,30 +1,32 @@
+from datetime import datetime
 from app.model import Casos,Recuperados,Mortes,Pais
 from app import db
 
 def queryTypeChecker(_type):
     obj = {}
-    if 'casos' in _type:
+    if ('casos' in _type) or ('cases' in _type):
         obj = {
             'Class': Casos, 
             'pais_relationship': 'pais_caso_relationship'
             }
-    if 'recuperados' in _type:
+    if ('recuperados' in _type) or ('recovered' in _type):
         obj = {
             'Class': Recuperados,
             'pais_relationship': 'pais_recuperados_relationship'
             }
-    if 'mortes' in _type:
+    if ('mortes'in _type) or ('deaths' in _type):
         obj = {
             'Class': Mortes,
             'pais_relationship': 'pais_mortes_relationship'
             }
-            
+    print (obj)
     return obj or False
 
 
 
 def getQueryTotalWorld(_type):
     queryType = queryTypeChecker(_type)
+    
     q = Pais.query.all()
     nome_paises = []
     totalQuantity = 0
@@ -43,8 +45,11 @@ def getQueryTotalWorld(_type):
 
 def getQueryQuantidadeTotalByPais(nome_pais, _type):
     try:
+        
         queryType = queryTypeChecker(_type)
+        print (queryType)
         quantidadeByPaisByType = queryType['Class'].query.filter(Pais.nome_pais==nome_pais).join(getattr(Pais,queryType['pais_relationship'])).order_by(queryType['Class'].quantidade.desc()).first().quantidade
+        print (quantidadeByPaisByType)
         return {
             'country': nome_pais,
             'totalQuantity': quantidadeByPaisByType
@@ -58,6 +63,23 @@ def getQueryByDataAndPais(data, nome_pais, _type):
         return type_in_pais
         
     return False
+def getQueryByDataAndPaisRoute(data, nome_pais, _type):
+    try:
+        queryType = queryTypeChecker(_type)
+        search_created = datetime.strptime(data, '%m-%d-%y')
+        print (queryType)
+        type_in_pais = queryType['Class'].query.filter(Pais.nome_pais==nome_pais).join(getattr(Pais,queryType['pais_relationship'])).filter_by(data=search_created).first()
+        
+        
+        if type_in_pais:
+            
+            return {
+                'country': nome_pais,
+                'data':search_created,
+                'count':type_in_pais.quantidade
+                }
+    except Exception as e: 
+        return False
 
 def insert_query(data, quantidade, nome_pais, _type):
 
